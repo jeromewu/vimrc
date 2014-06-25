@@ -2,23 +2,34 @@
 "this .vimrc is written by Jerome Wu(jeromewus@gmail.com)
 "feel free to modify :)
 "
-"the goal of this vimrc is to keep it simple and you don't
-"need to install any plugins.
-"
-"
 "ref:
 "http://amix.dk/vim/vimrc.html
 "http://vim.spf13.com
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""
+"Vundle"
+""""""""
+set nocompatible                        "enable features which are not vi compatible
+filetype off                            "using filetype plugin indent on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'indentpython.vim'
+Bundle 'taglist.vim'
+
+" Now we can turn our filetype functionality back on
+filetype plugin indent on
+
 """""""""
 "General"
 """""""""
-set nocompatible                        "enable features which are not vi compatible
 set ls=2                                "always show status line + command-line
 set autoread                            "auto read when a file is changed from outside
-filetype plugin indent on               "automatically detect file types
-set viminfo^=%                          " Remember info about open buffers on close
+set viminfo^=%                          "Remember info about open buffers on close
 set history=1000                        "set how many lines of history VIM has to remember
 
 "map leader for extra key combinations
@@ -58,7 +69,7 @@ set visualbell                          "chose visual bell rather than beeping
 set ruler                               "show current position
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "a ruler on steroids 
 set laststatus=2                        "always show the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+set statusline=\ %{HasPaste()}\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
 set showmode                            "display current mode
 
 
@@ -71,14 +82,24 @@ set smartcase                           "try to be smart about cases
 """""""""""""
 "Key mapping"
 """""""""""""
-",n to deactive highlighting
-nmap <silent> <leader>n :silent :nohlsearch<CR>
+",<cr> to deactive highlighting
+nmap <silent> <leader><cr> :nohlsearch<cr>
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
+"Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+",pp to toggle and untoggle paste mode on and off"
+map <leader>pp :setlocal paste!<cr>
+",ss to toggle and untoggle spell checking"
+map <leader>ss :setlocal spell!<cr>
+map <leader>sn ]s                       "Go to next spell check point 
+map <leader>sp [s                       "Go to previous spell check point
+map <leader>sa zg                       "Add this word to the exception dictionary
+map <leader>s? z=                       "Show candidate words
 ",x to view in hex mode ,xx to return
-nmap <silent> <leader>x :%!xxd<CR>
-nmap <silent> <leader>xx :%!xxd -r<CR>
-",r to execute current file(for python and bash script)
-nmap <silent> <leader>r :!./%<CR>
-
+nmap <silent> <leader>x :%!xxd<cr>
+nmap <silent> <leader>xx :%!xxd -r<cr>
 
 """""""""""""""""""
 "Function, autocmd"
@@ -96,3 +117,26 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+""""""""""""""""
+"Plugin Setting"
+""""""""""""""""
+" A nice color theme
+color jellybeans
+
+" NerdTree
+nmap <leader>nt :NERDTreeFind<CR>
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode=0
+let NERDTreeQuitOnOpen=1
+let NERDTreeMouseMode=2
+let NERDTreeShowHidden=1
+let NERDTreeKeepTreeInNewTab=1
+let g:nerdtree_tabs_open_on_gui_startup=0
+
+" ctags gen
+map <leader>c :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" taglist
+map <leader>l :TlistToggle<cr>
