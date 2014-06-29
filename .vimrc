@@ -12,7 +12,7 @@
 """"""""
 set nocompatible                        "enable features which are not vi compatible
 filetype off                            "using filetype plugin indent on
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
