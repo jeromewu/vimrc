@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Backup the existing .vimrc file and .vim folder"
-cp ~/.vimrc ~/.vimrc.bak
-cp -r ~/.vim ~/.vim.bak
+mv ~/.vimrc ~/.vimrc.bak
+mv -r ~/.vim ~/.vim.bak
 echo "Install new version"
 cp ./.vimrc ~/
 mkdir ~/.vim
