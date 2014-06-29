@@ -2,7 +2,7 @@
 
 echo "Backup the existing .vimrc file and .vim folder"
 mv ~/.vimrc ~/.vimrc.bak
-mv -r ~/.vim ~/.vim.bak
+mv ~/.vim ~/.vim.bak
 echo "Install new version"
 cp ./.vimrc ~/
 mkdir ~/.vim
