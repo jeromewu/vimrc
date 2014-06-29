@@ -136,7 +136,7 @@ let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 
 " ctags gen
-map <leader>c :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <leader>ct :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " taglist
-map <leader>l :TlistToggle<cr>
+map <leader>tl :TlistToggle<cr>
