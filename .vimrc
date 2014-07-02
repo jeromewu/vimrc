@@ -12,7 +12,7 @@
 """"""""
 set nocompatible                        "enable features which are not vi compatible
 filetype off                            "using filetype plugin indent on
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -71,6 +71,7 @@ set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "a ruler on steroids
 set laststatus=2                        "always show the status line
 set statusline=\ %{HasPaste()}\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
 set showmode                            "display current mode
+set t_Co=256                            "Support 256 color
 
 
 "search
