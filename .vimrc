@@ -11,7 +11,7 @@
 "Vundle"
 """"""""
 set nocompatible                        "enable features which are not vi compatible
-filetype off                            "using filetype plugin indent on
+filetype off                           "using filetype plugin indent on
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'indentpython.vim'
 Bundle 'taglist.vim'
+Bundle 'drools.vim'
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
@@ -141,3 +142,6 @@ map <leader>ct :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " taglist
 map <leader>tl :TlistToggle<cr>
+
+" enable drools syntax highlighting
+au BufRead,BufNewFile *.drl set syntax=drools
