@@ -10,14 +10,17 @@ To install the files, please execute:
 
 1. Plugins:
 
-* vundle
-* NERDTree
-* Taglist
-* indentpython.vim
+* [pathogen](https://github.com/tpope/vim-pathogen)
+* [NERDTree](https://github.com/scrooloose/nerdtree)
+* [syntastic](https://github.com/scrooloose/syntastic)
+* [vim-javascript](https://github.com/pangloss/vim-javascript)
+* [vim-jsx](https://github.com/mxw/vim-jsx)
+* [delimitMate](https://github.com/Raimondi/delimitMate)
+* [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 
 2. Color theme:
 
-* JellyBeans
+* [jellybeans](https://github.com/nanotech/jellybeans.vim)
 
 ref:
 

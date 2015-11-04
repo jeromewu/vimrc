@@ -8,26 +8,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""
-"Vundle"
+"Pathogen"
 """"""""
-set nocompatible                        "enable features which are not vi compatible
-filetype off                           "using filetype plugin indent on
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'indentpython.vim'
-Bundle 'taglist.vim'
-Bundle 'drools.vim'
-
-" Now we can turn our filetype functionality back on
-filetype plugin indent on
+execute pathogen#infect()
 
 """""""""
 "General"
 """""""""
+set nocompatible                        "enable features which are not vi compatible
+filetype plugin indent on
 set ls=2                                "always show status line + command-line
 set autoread                            "auto read when a file is changed from outside
 set viminfo^=%                          "Remember info about open buffers on close
@@ -93,15 +82,15 @@ map j gj
 map k gk
 ",pp to toggle and untoggle paste mode on and off"
 map <leader>pp :setlocal paste!<cr>
-",ss to toggle and untoggle spell checking"
-map <leader>ss :setlocal spell!<cr>
-map <leader>sn ]s                       "Go to next spell check point 
-map <leader>sp [s                       "Go to previous spell check point
-map <leader>sa zg                       "Add this word to the exception dictionary
-map <leader>s? z=                       "Show candidate words
 ",x to view in hex mode ,xx to return
 nmap <silent> <leader>x :%!xxd<cr>
 nmap <silent> <leader>xx :%!xxd -r<cr>
+
+" ,sc to view the syntastic check result
+map <leader>sc :SyntasticCheck<cr>
+
+" remap ESC to jj
+inoremap ii <ESC>
 
 """""""""""""""""""
 "Function, autocmd"
@@ -137,11 +126,16 @@ let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 
-" ctags gen
-map <leader>ct :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" default settings syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" taglist
-map <leader>tl :TlistToggle<cr>
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
-" enable drools syntax highlighting
-au BufRead,BufNewFile *.drl set syntax=drools
+" vim-jsx
+let g:jsx_ext_required = 0
