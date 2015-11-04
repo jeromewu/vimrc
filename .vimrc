@@ -90,7 +90,7 @@ nmap <silent> <leader>xx :%!xxd -r<cr>
 map <leader>sc :SyntasticCheck<cr>
 
 " remap ESC to jj
-inoremap ii <ESC>
+inoremap jj <ESC>
 
 """""""""""""""""""
 "Function, autocmd"
