@@ -21,8 +21,7 @@ main(){
   git clone https://github.com/scrooloose/syntastic ${basePluginDir}/syntastic
   git clone https://github.com/pangloss/vim-javascript ${basePluginDir}/vim-javascript
   git clone https://github.com/mxw/vim-jsx ${basePluginDir}/vim-jsx
-  git clone https://github.com/Raimondi/delimitMate ${basePluginDir}/delimitMate
-  git clone https://github.com/easymotion/vim-easymotion ${basePluginDir}/vim-easymotion
+  git clone https://github.com/heavenshell/vim-jsdoc ${basePluginDir}/vim-jsdoc
 }
 
 main "$@"

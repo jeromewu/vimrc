@@ -92,6 +92,9 @@ map <leader>sc :SyntasticCheck<cr>
 " remap ESC to jj
 inoremap jj <ESC>
 
+" remap :JsDoc to jd
+nmap jd :JsDoc<cr>
+
 """""""""""""""""""
 "Function, autocmd"
 """""""""""""""""""
@@ -135,7 +138,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntasitc_mode_map = {"mode":"passive"}
 let g:syntastic_javascript_checkers = ['eslint']
 
 " vim-jsx
 let g:jsx_ext_required = 0
+
+" vim-jsdoc
+let g:jsdoc_enable_es6 = 1

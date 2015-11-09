@@ -15,8 +15,7 @@ To install the files, please execute:
 * [syntastic](https://github.com/scrooloose/syntastic)
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
-* [delimitMate](https://github.com/Raimondi/delimitMate)
-* [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+* [vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
 
 2. Color theme:
 
