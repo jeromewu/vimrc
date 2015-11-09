@@ -146,3 +146,4 @@ let g:jsx_ext_required = 0
 
 " vim-jsdoc
 let g:jsdoc_enable_es6 = 1
+let g:jsdoc_allow_input_prompt = 1
