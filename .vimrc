@@ -138,8 +138,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntasitc_mode_map = {"mode":"passive"}
+let g:syntasitc_mode_map = {"mode":'passive', "passive_filetypes": ["java"]}
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_java_checkers = []
 
 " vim-jsx
 let g:jsx_ext_required = 0
@@ -150,3 +151,6 @@ let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_access_descriptions = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_underscore_private = 1
+
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<c-o>"

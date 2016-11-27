@@ -1,0 +1,26 @@
+snippet rn-component
+import React, { PropTypes } from 'react';
+import { View } from 'react-native';
+
+const $1 = () => {
+	<View />
+};
+
+$1.propTypes = {
+};
+
+$1.defaultProps = {
+};
+
+export default $1;
+endsnippet
+
+snippet container
+import { connect } from 'react-redux';
+import $1 from './$1';
+
+export default connect(
+	() => ({}),
+	() => ({}),
+)($1);
+endsnippet
