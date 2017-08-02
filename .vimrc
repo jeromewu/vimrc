@@ -95,6 +95,9 @@ inoremap jj <ESC>
 " remap :JsDoc to jd
 nmap jd :JsDoc<cr>
 
+" insert date
+imap <leader>id <C-R>=strftime("%Y-%m-%d")<CR>
+
 """""""""""""""""""
 "Function, autocmd"
 """""""""""""""""""
