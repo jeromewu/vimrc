@@ -16,6 +16,7 @@ To install the files, please execute:
 * [vim-javascript](https://github.com/pangloss/vim-javascript)
 * [vim-jsx](https://github.com/mxw/vim-jsx)
 * [vim-jsdoc](https://github.com/heavenshell/vim-jsdoc)
+* [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
 
 2. Color theme:
 
