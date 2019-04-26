@@ -89,11 +89,13 @@ nmap <silent> <leader>xx :%!xxd -r<cr>
 " ,sc to view the syntastic check result
 map <leader>sc :SyntasticCheck<cr>
 
+" map :JsDoc to jd
+nmap <leader>jd :JsDoc<cr>
+
 " map ESC to ii
 inoremap ii <ESC>
 
-" remap :JsDoc to jd
-nmap jd :JsDoc<cr>
+
 
 " insert date
 imap <leader>id <C-R>=strftime("%Y-%m-%d")<CR>
