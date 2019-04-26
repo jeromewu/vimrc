@@ -91,6 +91,7 @@ nmap <silent> <leader>xx :%!xxd -r<cr>
 map <leader>sc :SyntasticCheck<cr>
 
 " ,t to open a terminal
+" To scroll the terminal, hit Ctrl+w N and go back with i or a
 map <leader>t :term<cr>
 
 " ,jd to insert jsDoc
