@@ -62,7 +62,8 @@ set laststatus=2                        "always show the status line
 set statusline=\ %{HasPaste()}\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
 set showmode                            "display current mode
 set t_Co=256                            "Support 256 color
-
+set splitbelow                          "make all split happen below
+set termwinsize=10x0                    "fix termainl size to 10 rows
 
 "search
 set incsearch                           "incremental search
@@ -89,13 +90,14 @@ nmap <silent> <leader>xx :%!xxd -r<cr>
 " ,sc to view the syntastic check result
 map <leader>sc :SyntasticCheck<cr>
 
-" map :JsDoc to jd
+" ,t to open a terminal
+map <leader>t :term<cr>
+
+" ,jd to insert jsDoc
 nmap <leader>jd :JsDoc<cr>
 
 " map ESC to ii
 inoremap ii <ESC>
-
-
 
 " insert date
 imap <leader>id <C-R>=strftime("%Y-%m-%d")<CR>
