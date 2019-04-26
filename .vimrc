@@ -49,7 +49,7 @@ set backspace=indent,eol,start          "Backspace for dummies
 """"""""""""""""
 syntax on                               "show syntax color 
 set background=dark                     "set background dark
-set number                              "show line number
+set number relativenumber               "show line number
 set title                               "show title
 set cursorline                          "highlight current line
 set cursorcolumn                        "highlight current column
@@ -89,8 +89,8 @@ nmap <silent> <leader>xx :%!xxd -r<cr>
 " ,sc to view the syntastic check result
 map <leader>sc :SyntasticCheck<cr>
 
-" remap ESC to jj
-inoremap jj <ESC>
+" map ESC to ii
+inoremap ii <ESC>
 
 " remap :JsDoc to jd
 nmap jd :JsDoc<cr>
