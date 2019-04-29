@@ -124,7 +124,7 @@ autocmd BufReadPost *
 "Plugin Setting"
 """"""""""""""""
 " A nice color theme
-color jellybeans
+color gruvbox
 
 " NerdTree
 nmap <leader>nt :NERDTreeFind<CR>
