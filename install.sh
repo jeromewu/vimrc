@@ -35,6 +35,7 @@ main(){
   git clone --depth 1 https://github.com/Valloric/YouCompleteMe ${basePluginDir}/YouCompleteMe
   git clone --depth 1 https://github.com/SirVer/ultisnips ${basePluginDir}/ultisnips
   git clone --depth 1 https://github.com/ludovicchabant/vim-gutentags ${basePluginDir}/vim-gutentags
+  git clone --depth 1 https://github.com/vim-airline/vim-airline ${basePluginDir}/vim-airline
 
   echo "Install YouCompleteMe"
   cd ~/.vim/bundle/YouCompleteMe
