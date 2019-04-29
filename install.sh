@@ -26,7 +26,7 @@ main(){
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
   echo "Install plugins"
-  git clone --depth 1 https://github.com/nanotech/jellybeans.vim ${basePluginDir}/jellybeans.vim
+  git clone --depth 1 https://github.com/morhetz/gruvbox.git ${basePluginDir}/gruvbox
   git clone --depth 1 https://github.com/scrooloose/nerdtree ${basePluginDir}/nerdtree
   git clone --depth 1 https://github.com/scrooloose/syntastic ${basePluginDir}/syntastic
   git clone --depth 1 https://github.com/pangloss/vim-javascript ${basePluginDir}/vim-javascript
