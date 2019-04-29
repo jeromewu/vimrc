@@ -39,6 +39,7 @@ main(){
   git clone --depth 1 https://github.com/xolox/vim-misc ${basePluginDir}/vim-misc
   git clone --depth 1 https://github.com/xolox/vim-session ${basePluginDir}/vim-session
   git clone --depth 1 https://github.com/tpope/vim-surround ${basePluginDir}/vim-surround
+  git clone --depth 1 https://github.com/jiangmiao/auto-pairs.git ${basePluginDir}/auto-pairs
 
   echo "Install YouCompleteMe"
   cd ~/.vim/bundle/YouCompleteMe
