@@ -199,3 +199,6 @@ endif
 " vim-session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
+
+" vim-gitgutter
+set updatetime=100
