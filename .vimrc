@@ -205,3 +205,4 @@ set updatetime=100
 
 " vim-ale
 let g:ale_open_list = 1
+let g:ale_linters = {'javascript': ['eslint', 'flow']}                                                                                                                         
