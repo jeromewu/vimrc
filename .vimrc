@@ -202,3 +202,6 @@ let g:session_autoload = 'no'
 
 " vim-gitgutter
 set updatetime=100
+
+" vim-ale
+let g:ale_open_list = 1
