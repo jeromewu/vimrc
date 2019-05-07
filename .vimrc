@@ -124,7 +124,16 @@ autocmd BufReadPost *
 "Plugin Setting"
 """"""""""""""""
 " A nice color theme
-color gruvbox
+colorscheme gruvbox
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" Jump to anywhere you want with minimal keystrokes, with just two key binding.
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
 
 " NerdTree
 nmap <leader>nt :NERDTreeFind<CR>
@@ -150,6 +159,9 @@ let g:syntasitc_mode_map = {"mode":'passive', "passive_filetypes": ["java"]}
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_java_checkers = []
 
+" vim-javascript
+let g:javascript_plugin_flow = 1
+
 " vim-jsx
 let g:jsx_ext_required = 0
 
@@ -160,7 +172,7 @@ let g:jsdoc_access_descriptions = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_underscore_private = 1
 
-" Trigger configuration.
+" ultisnips, Trigger configuration.
 let g:UltiSnipsExpandTrigger="<c-o>"
 
 " vim-gutentags
