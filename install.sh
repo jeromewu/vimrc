@@ -30,7 +30,7 @@ main(){
   git clone --depth 1 https://github.com/scrooloose/nerdtree ${basePluginDir}/nerdtree
   git clone --depth 1 https://github.com/scrooloose/syntastic ${basePluginDir}/syntastic
   git clone --depth 1 https://github.com/pangloss/vim-javascript ${basePluginDir}/vim-javascript
-  git clone --depth 1 https://github.com/neoclide/vim-jsx-improve ${basePluginDir}/vim-jsx-improve
+  git clone --depth 1 https://github.com/MaxMEllon/vim-jsx-pretty ${basePluginDir}/vim-jsx-pretty
   git clone --depth 1 https://github.com/heavenshell/vim-jsdoc ${basePluginDir}/vim-jsdoc
   git clone --depth 1 https://github.com/mattn/emmet-vim/ ${basePluginDir}/emmet-vim
   git clone --depth 1 https://github.com/Valloric/YouCompleteMe ${basePluginDir}/YouCompleteMe
