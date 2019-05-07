@@ -7,10 +7,32 @@
 "http://vim.spf13.com
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""
-"Pathogen"
-""""""""
-execute pathogen#infect()
+""""""""""
+"vim-plug"
+""""""""""
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'heavenshell/vim-jsdoc'
+
+Plug 'scrooloose/nerdtree'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'SirVer/ultisnips'
+
+call plug#end()
+
 
 """""""""
 "General"
@@ -56,11 +78,6 @@ set cursorcolumn                        "highlight current column
 set mouse=a                             "mouse support (for highlighting etc.), press shift when you want to copy&paste
 set encoding=utf8                       "encoding
 set visualbell                          "chose visual bell rather than beeping
-set ruler                               "show current position
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) "a ruler on steroids 
-set laststatus=2                        "always show the status line
-set statusline=\ %{HasPaste()}\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
-set showmode                            "display current mode
 set t_Co=256                            "Support 256 color
 set splitbelow                          "make all split happen below
 set termwinsize=10x0                    "fix termainl size to 10 rows
@@ -76,13 +93,17 @@ set smartcase                           "try to be smart about cases
 """""""""""""
 ",<cr> to deactive highlighting
 nmap <silent> <leader><cr> :nohlsearch<cr>
+
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
+
 "Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
+
 ",pp to toggle and untoggle paste mode on and off"
 map <leader>pp :setlocal paste!<cr>
+
 ",x to view in hex mode ,xx to return
 nmap <silent> <leader>x :%!xxd<cr>
 nmap <silent> <leader>xx :%!xxd -r<cr>
@@ -146,19 +167,6 @@ let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 
-" default settings syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntasitc_mode_map = {"mode":'passive', "passive_filetypes": ["java"]}
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_java_checkers = []
-
 " vim-javascript
 let g:javascript_plugin_flow = 1
 
@@ -172,7 +180,7 @@ let g:jsdoc_access_descriptions = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_underscore_private = 1
 
-" ultisnips, Trigger configuration.
+" ultisnips
 let g:UltiSnipsExpandTrigger="<c-o>"
 
 " vim-gutentags
