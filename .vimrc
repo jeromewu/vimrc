@@ -31,6 +31,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
 Plug 'w0rp/ale'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -204,5 +205,4 @@ let g:session_autoload = 'no'
 set updatetime=100
 
 " vim-ale
-let g:ale_open_list = 1
 let g:ale_linters = {'javascript': ['eslint', 'flow']}                                                                                                                         
