@@ -1,0 +1,16 @@
+{
+  "libs": [
+    "browser",
+    "ecmascript",
+    "react"
+  ],
+  "plugins": {
+    "node": {},
+    "node_resolve": {},
+    "complete_strings": {},
+    "commonjs": {},
+    "modules": {},
+    "es_modules": {},
+    "requirejs": {}
+  }
+}

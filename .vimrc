@@ -1,11 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"this .vimrc is written by Jerome Wu(jeromewus@gmail.com)
-"feel free to modify :)
 "
-"ref:
-"http://amix.dk/vim/vimrc.html
-"http://vim.spf13.com
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" This .vimrc is written by Jerome Wu(jeromewus@gmail.com)
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""
 "vim-plug"
@@ -18,21 +15,20 @@ Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Tags file manager, <C-]> to jump to definition, see :help gutentags
+Plug 'ludovicchabant/vim-gutentags'
+" Improve HTML workflow using <C-y>, to expand, see :help emmet
+Plug 'mattn/emmet-vim'
 
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'airblade/vim-gitgutter'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
 Plug 'w0rp/ale'
-Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -83,7 +79,6 @@ set encoding=utf8                       "encoding
 set visualbell                          "chose visual bell rather than beeping
 set t_Co=256                            "Support 256 color
 set splitbelow                          "make all split happen below
-set termwinsize=10x0                    "fix termainl size to 10 rows
 
 "search
 set incsearch                           "incremental search
@@ -97,9 +92,6 @@ set smartcase                           "try to be smart about cases
 ",<cr> to deactive highlighting
 nmap <silent> <leader><cr> :nohlsearch<cr>
 
-" For when you forget to sudo.. Really Write the file.
-cmap w!! w !sudo tee % >/dev/null
-
 "Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
@@ -111,9 +103,6 @@ map <leader>pp :setlocal paste!<cr>
 nmap <silent> <leader>x :%!xxd<cr>
 nmap <silent> <leader>xx :%!xxd -r<cr>
 
-" ,sc to view the syntastic check result
-map <leader>sc :SyntasticCheck<cr>
-
 " ,t to open a terminal
 " To scroll the terminal, hit Ctrl+w N and go back with i or a
 map <leader>t :term<cr>
@@ -123,9 +112,6 @@ nmap <leader>jd :JsDoc<cr>
 
 " map ESC to ii
 inoremap ii <ESC>
-
-" insert date
-imap <leader>id <C-R>=strftime("%Y-%m-%d")<CR>
 
 """""""""""""""""""
 "Function, autocmd"
@@ -148,16 +134,7 @@ autocmd BufReadPost *
 "Plugin Setting"
 """"""""""""""""
 " A nice color theme
-colorscheme gruvbox
-
-" EasyMotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" Jump to anywhere you want with minimal keystrokes, with just two key binding.
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
+silent! colorscheme gruvbox
 
 " NerdTree
 nmap <leader>nt :NERDTreeFind<CR>
@@ -189,21 +166,17 @@ let g:UltiSnipsExpandTrigger="<c-o>"
 " vim-gutentags
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--c++-kinds=+px', '--c-kinds=+px']
 let s:vim_tags = expand('~/.cache/tags')
 let g:gutentags_cache_dir = s:vim_tags
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 if !isdirectory(s:vim_tags)
    silent! call mkdir(s:vim_tags, 'p')
 endif
-
-" vim-session
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
 
 " vim-gitgutter
 set updatetime=100
 
 " vim-ale
 let g:ale_linters = {'javascript': ['eslint', 'flow']}                                                                                                                         
+" vim-go
+let g:go_version_warning = 0
