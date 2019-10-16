@@ -5,6 +5,7 @@ set -e -o pipefail
 main(){
   timestamp=$(date +%s)
 
+  # Must use exuberant-ctags or universal-ctags
   echo "Check dependencies"
   for cmd in git cmake python node ctags
   do
@@ -12,8 +13,8 @@ main(){
   done
 
   echo "Backup existing .vimrc file and .vim folder"
-  mv ~/.vimrc ~/.vimrc.${timestamp}
-  mv ~/.vim ~/.vim.${timestamp}
+  mv ~/.vimrc ~/.vimrc.${timestamp} || true
+  mv ~/.vim ~/.vim.${timestamp} || true
 
   echo "Copy .vimrc"
   cp ./.vimrc ~/.vimrc

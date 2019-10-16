@@ -180,3 +180,6 @@ set updatetime=100
 let g:ale_linters = {'javascript': ['eslint', 'flow']}                                                                                                                         
 " vim-go
 let g:go_version_warning = 0
+
+" YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
