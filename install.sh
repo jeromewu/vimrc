@@ -7,7 +7,7 @@ main(){
 
   # Must use exuberant-ctags or universal-ctags
   echo "Check dependencies"
-  for cmd in git cmake python node ctags
+  for cmd in git cmake python node ctags go
   do
     command -v $cmd > /dev/null 2>&1 || { echo >&2 "$cmd is required for this script. Aborting"; exit 1; }
   done
@@ -22,8 +22,8 @@ main(){
   echo "Copy .vim"
   cp -r ./.vim ~/.vim/
 
-  echo "Copy .tern-project"
-  cp -r ./.tern-project ~/.tern-project
+  echo "Copy .ctags"
+  cp ./.ctags ~/.ctags
 
   echo "Install plug.vim"
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

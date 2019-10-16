@@ -16,22 +16,22 @@ Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Tags file manager, <C-]> to jump to definition, see :help gutentags
+" Tags file manager, <C-]> to jump to definition
 Plug 'ludovicchabant/vim-gutentags'
-" Improve HTML workflow using <C-y>, to expand, see :help emmet
+" Improve HTML workflow using <C-y>, to expand
 Plug 'mattn/emmet-vim'
 
+" Show git gutter, ]c jump to next change, [c jump to prev change
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'w0rp/ale'
 
 call plug#end()
-
 
 """""""""
 "General"
@@ -164,6 +164,7 @@ let g:jsdoc_underscore_private = 1
 let g:UltiSnipsExpandTrigger="<c-o>"
 
 " vim-gutentags
+" let g:gutentags_ctags_executable = '~/bin/ctags'
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
 let g:gutentags_ctags_tagfile = '.tags'
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q', '--c++-kinds=+px', '--c-kinds=+px']
