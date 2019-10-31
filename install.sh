@@ -30,7 +30,7 @@ main(){
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   echo "Install plugins"
-  vim +PlugInstall +qall
+  vim +'PlugInstall --sync' +qa
 }
 
 main "$@"
