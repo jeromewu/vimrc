@@ -15,9 +15,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'heavenshell/vim-jsdoc'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Tags file manager, <C-]> to jump to definition
-Plug 'ludovicchabant/vim-gutentags'
 " Improve HTML workflow using <C-y>, to expand
 Plug 'mattn/emmet-vim'
 
@@ -27,8 +24,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
-Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'w0rp/ale'
 
 call plug#end()
@@ -160,9 +155,6 @@ let g:jsdoc_access_descriptions = 1
 let g:jsdoc_additional_descriptions = 1
 let g:jsdoc_underscore_private = 1
 
-" ultisnips
-let g:UltiSnipsExpandTrigger="<c-o>"
-
 " vim-gutentags
 " let g:gutentags_ctags_executable = '~/bin/ctags'
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
@@ -179,8 +171,3 @@ set updatetime=100
 
 " vim-ale
 let g:ale_linters = {'javascript': ['eslint', 'flow']}                                                                                                                         
-" vim-go
-let g:go_version_warning = 0
-
-" YCM
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
